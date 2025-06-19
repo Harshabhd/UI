@@ -37,4 +37,7 @@ export class PageHeaderComponent {
     this.router.navigateByUrl('/login');
 
   }
+  profile(){
+    this.router.navigateByUrl('/profile');
+  }
 }
