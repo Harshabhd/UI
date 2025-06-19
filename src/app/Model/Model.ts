@@ -40,4 +40,16 @@ export interface Book {
     subCategory: string;
     books: Book[];
   }
+  export interface order{
+    id:number;
+    userId:number;
+    userName:string | null;
+    bookId:number;
+    bookTitle:  string;
+    orderDate:string;
+    returned:boolean;
+    returnDate:string | null;
+    finePaid:number;
+
+  }
   

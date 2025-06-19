@@ -94,4 +94,23 @@ bookstodisplay:BooksByCategory[]=[
   },
 ];
 
+orderBook(book:Book){
+this.apiservice.orderBook(book).subscribe({
+  next:(res)=>{
+    if(res=='ordered'){
+      book.ordered=true;
+      let today=new Date();
+      let retuneDate=new Date();
+      retuneDate.setDate(today.getDate()+10);
+      
+      this.snackbar.open(book.title+' has been ordered! You will return on '+retuneDate.toDateString(),'Ok')
+
+
+    }else{
+      this.snackbar.open('Yoy alreday have 3 orders pending to return.','Ok');
+    }
+  }
+})
+}
+
 }
